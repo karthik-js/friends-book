@@ -8,7 +8,7 @@ import { TokenStorageService } from '../_services/token-storage.service';
 })
 export class HeaderComponent implements OnInit {
   isLoggedIn = false;
-  username: string;
+  isAdmin: string;
 
   constructor(private tokenStorageService: TokenStorageService) {}
 
@@ -17,8 +17,7 @@ export class HeaderComponent implements OnInit {
 
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
-
-      this.username = user.username;
+      this.isAdmin = user.isAdmin;
     }
   }
 

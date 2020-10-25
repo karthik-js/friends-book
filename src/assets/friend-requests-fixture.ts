@@ -1,0 +1,58 @@
+export const users = [
+  {
+    id: '1',
+    userId: '1',
+    friendId: '1',
+    status: 'Friend',
+    createdDate: 'Today',
+  },
+  {
+    id: '2',
+    userId: '2',
+    friendId: '2',
+    status: 'Pending',
+    createdDate: 'Today',
+  },
+  {
+    id: '3',
+    userId: '3',
+    friendId: '3',
+    status: 'Pending',
+    createdDate: 'Today',
+  },
+  {
+    id: '4',
+    userId: '4',
+    friendId: '4',
+    status: 'Pending',
+    createdDate: 'Today',
+  },
+  {
+    id: '5',
+    userId: '5',
+    friendId: '5',
+    status: 'Friend',
+    createdDate: 'Today',
+  },
+  {
+    id: '6',
+    userId: '6',
+    friendId: '6',
+    status: 'Pending',
+    createdDate: 'Today',
+  },
+  {
+    id: '7',
+    userId: '7',
+    friendId: '7',
+    status: 'Not a friend',
+    createdDate: 'Today',
+  },
+  {
+    id: '8',
+    userId: '8',
+    friendId: '8',
+    status: 'Not a friend',
+    createdDate: 'Today',
+  },
+];

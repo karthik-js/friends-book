@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { HeaderComponent } from './header/header.component';
 import { NetworkComponent } from './network/network.component';
 import { FriendsComponent } from './friends/friends.component';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +27,15 @@ import { FriendsComponent } from './friends/friends.component';
     HeaderComponent,
     NetworkComponent,
     FriendsComponent,
+    AdminUsersComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    CommonModule,
+  ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
 })

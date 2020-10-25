@@ -1,1 +1,38 @@
-<p>home works!</p>
+<div class="d-flex py-5 px-2">
+  <div class="card" style="width: 18rem; height: fit-content">
+    <div class="card-body">
+      <h5 class="card-title">Profile Photo Placeholder</h5>
+      <hr />
+      <p class="card-text">XX Connections</p>
+      <hr />
+      <p class="card-text">XX Posts</p>
+    </div>
+  </div>
+  <div class="d-flex flex-column ml-5 flex-fill">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Write a new Post" />
+      <div class="input-group-append">
+        <button
+          class="btn btn-primary"
+          type="button"
+          id="button-post"
+          (click)="addPost()"
+        >
+          Post
+        </button>
+      </div>
+    </div>
+    <div class="d-flex flex-column py-2">
+      <ng-template ngFor let-post [ngForOf]="posts">
+        <div class="card my-3">
+          <div class="card-body">
+            <h5 class="card-title text-left">{{ post.post }}</h5>
+          </div>
+          <div class="card-footer text-muted text-right">
+            Posted by {{ post.username }} - Updated {{ post.createdDate }}
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,31 @@
-<p>settings works!</p>
+<div class="card border-dark my-5">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <div style="font-size: 20px">Profile Settings</div>
+    <button
+      type="button"
+      class="btn btn-light"
+      data-toggle="modal"
+      data-target="#exampleModal"
+    >
+      Edit
+    </button>
+  </div>
+  <div class="card-body text-dark">
+    <div class="d-flex align-items-center mb-2">
+      <img
+        src="https://source.unsplash.com/random/150x150"
+        alt="profile photo"
+        style="border-radius: 10%"
+      />
+      <h5 class="ml-5">{{ user.firstname + user.lastname }}</h5>
+    </div>
+    <h5 class="card-title mt-4">Profile Details</h5>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Email - {{ user.email }}</li>
+      <li class="list-group-item">Gender - {{ user.gender }}</li>
+      <li class="list-group-item">Contact - {{ user.number }}</li>
+      <li class="list-group-item">Country - {{ user.country }}</li>
+      <li class="list-group-item">State - {{ user.state }}</li>
+    </ul>
+  </div>
+</div>

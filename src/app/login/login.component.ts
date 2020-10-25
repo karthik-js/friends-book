@@ -25,26 +25,43 @@ export class LoginComponent implements OnInit {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.isAdmin = this.tokenStorage.getUser().isAdmin;
+      this.router.navigateByUrl('/home');
     }
   }
 
   onSubmit(): void {
-    this.authService.login(this.form).subscribe(
-      (data) => {
-        this.tokenStorage.saveToken(data.accessToken);
-        this.tokenStorage.saveUser(data);
+    const email = this.form.email;
+    const firstname = this.form.email.split('@')[0];
+    const user = {
+      email,
+      firstname,
+      lastname: '',
+      gender: 'Male',
+      number: '9922992299',
+      country: 'India',
+      state: 'Unknown',
+      isAdmin: false,
+    };
+    this.tokenStorage.saveToken('hi');
+    this.tokenStorage.saveUser(user);
+    this.router.navigateByUrl('/home');
 
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-        this.isAdmin = this.tokenStorage.getUser().isAdmin;
-        this.reloadPage();
-        this.router.navigateByUrl('/home');
-      },
-      (err) => {
-        this.errorMessage = err.error.message;
-        this.isLoginFailed = true;
-      }
-    );
+    // this.authService.login(this.form).subscribe(
+    //   (data) => {
+    //     this.tokenStorage.saveToken(data.accessToken);
+    //     this.tokenStorage.saveUser(data);
+
+    //     this.isLoginFailed = false;
+    //     this.isLoggedIn = true;
+    //     this.isAdmin = this.tokenStorage.getUser().isAdmin;
+    //     this.reloadPage();
+    //     this.router.navigateByUrl('/home');
+    //   },
+    //   (err) => {
+    //     this.errorMessage = err.error.message;
+    //     this.isLoginFailed = true;
+    //   }
+    // );
   }
 
   reloadPage(): void {

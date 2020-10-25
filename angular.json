@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "friends-book-angular-cert"
+    }
+  },
+  "defaultProject": "friends-book-angular-cert",
+  "cli": {
+    "analytics": "83f3966d-2887-4291-9986-1a24f5e98dd3"
+  }
 }
